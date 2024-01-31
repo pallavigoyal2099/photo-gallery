@@ -5,6 +5,7 @@ import ImageComponent from "./ImageComponent";
 
 const Wishlist = () => {
   const wishlist = useSelector(wishListData);
+  const reversedData = wishlist.slice().reverse();
   return (
     <div className="mb-16 w-[60rem] my-12">
       <div className="flex items-center flex-col pt-8">
@@ -13,7 +14,7 @@ const Wishlist = () => {
         </h1>
       </div>
       <div className="grid md:grid-cols-4 gap-4  grid-cols-2 mx-4">
-        {wishlist.map((result) => (
+        {reversedData.map((result) => (
           <ImageComponent
             key={result.id}
             smallHeight={"20rem"}
