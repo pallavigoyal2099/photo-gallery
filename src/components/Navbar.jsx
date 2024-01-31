@@ -53,7 +53,7 @@ const Navbar = () => {
           )}
         </div>
         <ul
-          className={`md:flex md:flex-row md:items-center  flex flex-col items-baseline   md:pb-0 pb-4 absolute md:static bg-gray-900 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={`md:flex md:flex-row md:items-center  flex flex-col  items-center   md:pb-0 pb-4 absolute md:static bg-gray-900 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0  transition-all duration-500 ease-in ${
             navbarOpen ? "top-20px" : "top-[-490px]"
           }`}
         >
