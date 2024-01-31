@@ -50,7 +50,7 @@ ImageComponent.propTypes = {
   height: PropTypes.string,
   width: PropTypes.string,
   alt: PropTypes.string,
-  imageObj: PropTypes.instanceOf({}),
+  imageObj: PropTypes.any,
   smallHeight: PropTypes.string,
   smallWidth: PropTypes.string,
 };

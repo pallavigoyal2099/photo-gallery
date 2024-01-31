@@ -35,5 +35,5 @@ export default WishlistPanel;
 
 WishlistPanel.propTypes = {
   handleButtonClick: PropTypes.func,
-  imageObj: PropTypes.instanceOf({}),
+  imageObj: PropTypes.any,
 };

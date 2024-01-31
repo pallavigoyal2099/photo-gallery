@@ -34,7 +34,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=" flex items-center flex-col mb-12 ">
+    <div className="  md:w-[60rem] w-[20rem] h-full  md:h-[50rem] flex items-center flex-col my-12">
       <div className="flex items-center flex-col pt-8">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl sm:px-6 ">
           Photo Gallery
@@ -44,6 +44,7 @@ const Home = () => {
           gallery, showcasing moments that tell a thousand stories.
         </p>
       </div>
+
       <Search onChange={(e) => setSearchTerm(e.target.value)} />
 
       {loading && (
@@ -52,36 +53,27 @@ const Home = () => {
         </div>
       )}
 
-      {!loading &&
-        !isLoading &&
-        !randomImage &&
-        searchResults === null &&
-        searchTerm.length === 0 && (
-          <div className="w-full flex items-center justify-center ">
-            <img src="noImage.jpeg" alt="no_image" />
-          </div>
-        )}
-
       {searchTerm?.length > 0 ? (
         <div className="md:w-[60rem] w-[20rem] mb-4  ">
           <div>
             {searchResults?.results?.length > 0 ? (
-              <div className="grid md:grid-cols-4 gap-4  grid-cols-2">
+              <div className="grid md:grid-cols-4 gap-4  grid-cols-2 mb-16">
                 {searchResults.results.map((result) => (
                   <ImageComponent
                     key={result.id}
-                    height={"14rem"}
-                    width={"4rem"}
-                    smallHeight={"12rem"}
+                    smallHeight={"20rem"}
                     smallWidth={"10rem"}
                     imageObj={result}
                     image={result.urls.small}
                     alt={result.alt_description}
+                    height="0"
+                    width="0"
                   />
                 ))}
               </div>
             ) : (
-              !isLoading && (
+              !isLoading &&
+              !loading && (
                 <div className="w-full flex items-center justify-center ">
                   <img src="noImage.jpeg" alt="no_image" />
                 </div>
@@ -89,18 +81,23 @@ const Home = () => {
             )}
           </div>
         </div>
+      ) : randomImage ? (
+        <ImageComponent
+          key={randomImage?.id}
+          height={"30rem"}
+          width={"60rem"}
+          imageObj={randomImage}
+          image={randomImage?.urls?.regular}
+          alt={randomImage?.alt_description}
+          smallHeight="0"
+          smallWidth="0"
+        />
       ) : (
-        randomImage && (
-          <ImageComponent
-            key={randomImage?.id}
-            height={"30rem"}
-            width={"60rem"}
-            smallHeight={"20rem"}
-            smallWidth={"20rem"}
-            imageObj={randomImage}
-            image={randomImage?.urls?.regular}
-            alt={randomImage?.alt_description}
-          />
+        !isLoading &&
+        !loading && (
+          <div className="w-full flex items-center justify-center ">
+            <img src="noImage.jpeg" alt="no_image" />
+          </div>
         )
       )}
     </div>
