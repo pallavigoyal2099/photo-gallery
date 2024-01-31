@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="shadow-md   w-full sticky top-0 left-0 z-20">
       <div className="md:flex items-center h-[4rem] justify-between bg-gray-900 py-4 md:px-10 px-7 ">
         <div className=" font-bold text-2xl cursor-pointer  flex items-center font-[Poppins] text-gray-100">
-          <span className="mr-1 pt-2">
+          <span className="mr-1 ">
             <img alt="gallery-icon" src="gallery.png" height={28} width={28} />
           </span>
           <a
@@ -57,7 +57,7 @@ const Navbar = () => {
             navbarOpen ? "top-20px" : "top-[-490px]"
           }`}
         >
-          <li className="mx-4 md:ml-8 text-xl md:my-0 my-7">
+          <li className="mx-4 md:ml-8 text-xl md:m-0 mt-7">
             <a
               href="/"
               className="block py-2 px-3 text-gray-100 rounded  md:hover:text-blue-700 md:p-0 md:dark:hover:bg-transparent"
@@ -65,7 +65,7 @@ const Navbar = () => {
               Home
             </a>
           </li>
-          <li className="md:ml-8 text-xl md:my-0 my-7">
+          <li className="md:ml-8 text-xl md:my-0 mt-7">
             <a
               href="/wishlist"
               className="block py-2 px-3 text-gray-100 rounded  md:hover:text-blue-700 md:p-0 md:dark:hover:bg-transparent"
