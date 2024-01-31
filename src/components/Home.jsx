@@ -57,12 +57,12 @@ const Home = () => {
         <div className="md:w-[60rem] w-[20rem] mb-4  ">
           <div>
             {searchResults?.results?.length > 0 ? (
-              <div className="grid md:grid-cols-4 gap-4  grid-cols-2 mb-16">
+              <div className="grid md:grid-cols-4 gap-6  grid-cols-2 mb-16">
                 {searchResults.results.map((result) => (
                   <ImageComponent
                     key={result.id}
                     smallHeight={"20rem"}
-                    smallWidth={"10rem"}
+                    smallWidth={"15rem"}
                     imageObj={result}
                     image={result.urls.small}
                     alt={result.alt_description}

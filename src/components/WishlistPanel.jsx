@@ -6,17 +6,21 @@ import { wishListData } from "../store/wishlistReducer";
 const WishlistPanel = ({ handleButtonClick, imageObj }) => {
   const wishlist = useSelector(wishListData);
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-gray-200 p-2 flex items-center justify-between transition-all duration-500 ease-in-out">
+    <div className="absolute bottom-0 left-0 right-0 bg-gray-200 p-2 flex items-center justify-between ">
       <span className="text-gray-700">Add to Wishlist</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="currentColor"
+        stroke={`text-${
+          wishlist.some((wishlistItem) => wishlistItem.id === imageObj.id)
+            ? "black-500"
+            : "gray-500"
+        }`}
         className={`w-6 h-6 cursor-pointer fill-current text-${
           wishlist.some((wishlistItem) => wishlistItem.id === imageObj.id)
-            ? "red-500"
+            ? "black-500"
             : "gray-500"
         }`}
         onClick={() => handleButtonClick(imageObj)}

@@ -19,20 +19,24 @@ const ImageComponent = ({
 
   const handleButtonClick = (imageObj) => {
     dispatch(toggleWishlist(imageObj));
+    setIsHovered(false);
   };
 
   return (
     <div
-      className={`group h-[${smallHeight}] md:h-[${height}]  md:w-[${width}] w-[${smallWidth}]  flex justify-center shadow-md text-center relative overflow-hidden rounded-md cursor-pointer my-5  `}
+      className={`group h-[${smallHeight}] md:h-[${height}] md:w-[${width}] w-[${smallWidth}] flex justify-center shadow-md text-center relative overflow-hidden rounded-md cursor-pointer my-5   `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ position: "relative" }}
     >
       <img
         src={image}
         alt={alt}
-        className="w-full h-full rounded-md  hover:bg-gray-900"
+        className={`w-full h-full rounded-md ${
+          isHovered ? "opacity-80" : "opacity-100"
+        }`}
       />
-      <div className="absolute bg-black  opacity-50 transition-all duration-500 group-hover:opacity-80" />
+      <div className="absolute bg-black opacity-50 transition-all duration-500 group-hover:opacity-80" />
       {isHovered && (
         <WishlistPanel
           handleButtonClick={handleButtonClick}
