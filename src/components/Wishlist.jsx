@@ -2,7 +2,6 @@ import React from "react";
 import { wishListData } from "../store/wishlistReducer";
 import { useSelector } from "react-redux";
 import ImageComponent from "./ImageComponent";
-import Home from "./Home";
 import { Link } from "react-router-dom";
 
 const Wishlist = () => {

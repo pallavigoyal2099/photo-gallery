@@ -39,7 +39,7 @@ const Home = () => {
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl sm:px-6 ">
           Photo Gallery
         </h1>
-        <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 px-8 ">
+        <p className="mb-6 text-lg text-center font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 px-8 ">
           Immerse yourself in a captivating visual experience with our photo
           gallery, showcasing moments that tell a thousand stories.
         </p>
